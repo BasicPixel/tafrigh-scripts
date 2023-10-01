@@ -13,8 +13,8 @@ for file in file_list:
     document = Document()
     document.add_heading(filename, 0)
 
-    new_file = open(path + file, encoding='utf-8').read()
+    file_contents = open(path + file, encoding='utf-8').read()
 
-    p = document.add_paragraph(new_file)
+    p = document.add_paragraph(file_contents)
     
     document.save('./output/' + filename + '.docx')

@@ -13,8 +13,6 @@ for file in file_list:
     document = Document()
     document.add_heading(filename, 0)
 
-    print(path + file)
-    
     new_file = open(path + file, encoding='utf-8').read()
 
     p = document.add_paragraph(new_file)

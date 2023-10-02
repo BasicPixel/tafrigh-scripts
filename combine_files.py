@@ -4,10 +4,10 @@ import os
 # TODO: fix files sort, see: natsort package
 
 # Assign directory
-directory = "C:\\Users\\night\\Documents\\سلسلة الحملة الإنجليزية على مصر\\تفريغات"
+directory = "./text/"
 
 # Create file
-file = open("demo.txt", "w", encoding="utf-8")
+file = open("./output/result.txt", "w", encoding="utf-8")
 
 # Init result variable
 text = ""

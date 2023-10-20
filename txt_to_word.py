@@ -14,12 +14,14 @@ for file in file_list:
     document.add_heading(filename, 0)
 
     # Get file contents
-    file_contents = open(path + file, encoding='utf-8').read()
-    
+    # If on Windows, specify encoding="utf-8" for open function
+    file_contents = open(path + file).read()
+
     # Remove unwanted words
-    final_text = file_contents.replace(" آآ ", " ").replace(" اا ", " ").replace(" اه ", " ")
+    final_text = file_contents.replace(" آآ ", " ").replace(
+        " اا ", " ").replace(" اه ", " ")
 
     # Add final text to the word document
     p = document.add_paragraph(final_text)
-    
+
     document.save('./output/' + filename + '.docx')

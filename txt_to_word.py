@@ -4,6 +4,7 @@ import os
 path = "./text/"
 
 file_list = os.listdir(path)
+print(file_list)
 
 if not os.path.exists("./output"):
     os.makedirs("./output")
@@ -19,9 +20,9 @@ for file in file_list:
     try:
         file_contents = open(path + file).read()
 
-    # Break loop if file is binary (non-text)
+    # Skip loop if file is binary (non-text)
     except UnicodeDecodeError:
-        break
+        continue
 
     # Remove unwanted words
     final_text = file_contents.replace(" آآ ", " ").replace(
